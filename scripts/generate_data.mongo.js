@@ -1,3 +1,5 @@
+/* global db print */
+/* eslint no-restricted-globals: "off" */
 const owners = ['Tony', 'Elton', 'Marge', 'Pat', 'Viola'];
 const statuses = ['New', 'Assigned', 'Fixed', 'Closed'];
 
