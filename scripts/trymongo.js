@@ -1,11 +1,11 @@
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
+const url = process.env.DB_URL || 'mongodb://localhost:27017/issuetracker';
 
 function testWithCallbacks(callback) {
   console.log('\n--- testWithCallbacks ---');
-  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(url, { useNewUrlParser: true });
 
   client.connect((conErr) => {
     if (conErr) {
@@ -41,7 +41,7 @@ function testWithCallbacks(callback) {
 
 async function testWithAsync() {
   console.log('\n-- testWithAsync ---');
-  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(url, { useNewUrlParser: true });
   try {
     await client.connect();
     console.log('Connected to MongoDB URL', url);
