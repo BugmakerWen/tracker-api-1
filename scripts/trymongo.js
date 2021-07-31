@@ -5,7 +5,7 @@ const url = process.env.DB_URL || 'mongodb://localhost:27017/issuetracker';
 
 function testWithCallbacks(callback) {
   console.log('\n--- testWithCallbacks ---');
-  const client = new MongoClient(url, { useNewUrlParser: true });
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
   client.connect((conErr) => {
     if (conErr) {
